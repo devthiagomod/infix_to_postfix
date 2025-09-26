@@ -97,8 +97,8 @@ char *Transformar_infixa_para_posfixa(char *infixa){
 
         // Caso 2: operadores '+' ou '-'
         else if(infixa[i] == '-' || infixa[i] == '+'){
-            aux = desempilhar(p); //desempilho para variavel auxciliar para verificar a procedencia
-            while(aux != -1 && aux != '('){ // desempilha até encontrar um operador de menor precedência
+            aux = desempilhar(p); // Desempilha o operador do topo da pilha para verificar sua precedência
+            while(aux != -1 && aux != '('){ // Desempilha operadores da pilha que têm precedência maior ou igual a '+' ou '-'
                 posfixa[k] = aux;
                 k++;                                                                    
                 aux = desempilhar(p);
@@ -117,8 +117,8 @@ char *Transformar_infixa_para_posfixa(char *infixa){
 
         // Caso 3: operadores '*' ou '/'
         else if(infixa[i] == '*' || infixa[i] == '/'){
-            aux = desempilhar(p);
-            while(aux != -1  && aux != '(' && aux != '+' && aux != '-'){ // desempilha operadores de precedência maior ou igual
+            aux = desempilhar(p); // Desempilha o operador do topo da pilha para verificar sua precedência
+            while(aux != -1  && aux != '(' && aux != '+' && aux != '-'){ // Desempilha operadores da pilha que têm precedência maior ou igual a '*' ou '/'
                 posfixa[k] = aux;
                 k++;
                 aux = desempilhar(p);
@@ -136,7 +136,7 @@ char *Transformar_infixa_para_posfixa(char *infixa){
 
         // Caso 4: operador '^'
         else if(infixa[i] == '^'){ // como '^' é o operador de maior precedência, basta empilhar
-            aux = desempilhar(p);
+            aux = desempilhar(p); // Desempilha o operador do topo da pilha para verificar sua precedência
             if(aux != -1){ 
                 empilhar(p, aux);
             }
