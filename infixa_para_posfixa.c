@@ -1,7 +1,7 @@
 /*
 --------------------------------------------------------
 Arquivo: infixa_para_posfixa.c
-Autores: Thiago Amaral e Christian Toleto
+Autores: Thiago Amaral e Christian Toledo
 Data de criação: 19/09/2025
 Última modificação: 26/09/2025
 Descrição: Programa em C que converte expressões da 
